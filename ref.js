@@ -1,14 +1,1 @@
-var ref = getParameterByName("ref"); // funkce pro získání hodnoty z URL
-if (ref) {
-  localStorage.setItem("ref", ref); // uložení do local storage
-}
-
-function getParameterByName(name) {
-  var url = window.location.href;
-  name = name.replace(/[\[\]]/g, '\\$&');
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-    results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+var ref=getParameterByName("ref");function getParameterByName(e){var r=window.location.href,a=RegExp("[?&]"+(e=e.replace(/[\[\]]/g,"\\$&"))+"(=([^&#]*)|&|#|$)").exec(r);return a?a[2]?decodeURIComponent(a[2].replace(/\+/g," ")):"":null}ref&&localStorage.setItem("ref",ref);
